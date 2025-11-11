@@ -97,6 +97,18 @@
         }
 
         /* Game: Mencocokkan Bentuk */
+        .shape-target-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        }
+
+        .shape-label {
+        font-weight: bold;
+        color: #555;
+        text-align: center;
+        }
         .shape-matching {
             display: flex;
             flex-wrap: wrap;
@@ -300,37 +312,49 @@
         <div class="game-area">
             <!-- Game: Mencocokkan Bentuk -->
             <div id="shape-matching" class="game-content">
-                <h2 class="game-title">Mencocokkan Bentuk</h2>
-                <p class="game-instruction">Seret bentuk ke tempat yang sesuai!</p>
-                
-                <div class="shape-matching">
-                    <div class="shape-container" draggable="true" data-shape="square">
-                        <div class="shape"></div>
-                    </div>
-                    <div class="shape-container" draggable="true" data-shape="circle">
-                        <div class="shape circle"></div>
-                    </div>
-                    <div class="shape-container" draggable="true" data-shape="triangle">
-                        <div class="shape triangle"></div>
-                    </div>
-                    <div class="shape-container" draggable="true" data-shape="star">
-                        <div class="shape star"></div>
-                    </div>
-                </div>
-                
-                <div class="shape-matching" style="margin-top: 30px;">
-                    <div class="shape-target" data-shape="square">Persegi</div>
-                    <div class="shape-target" data-shape="circle">Lingkaran</div>
-                    <div class="shape-target" data-shape="triangle">Segitiga</div>
-                    <div class="shape-target" data-shape="star">Bintang</div>
-                </div>
-                
-                <div class="feedback" id="shape-feedback"></div>
-                
-                <div class="action-buttons">
-                    <button class="action-button" onclick="resetShapeGame()">Ulangi</button>
-                </div>
+            <h2 class="game-title">Mencocokkan Bentuk</h2>
+            <p class="game-instruction">Seret bentuk ke tempat yang sesuai!</p>
+    
+            <div class="shape-matching">
+                <div class="shape-container" draggable="true" data-shape="square">
+                <div class="shape"></div>
             </div>
+            <div class="shape-container" draggable="true" data-shape="circle">
+                <div class="shape circle"></div>
+            </div>
+            <div class="shape-container" draggable="true" data-shape="triangle">
+                <div class="shape triangle"></div>
+            </div>
+            <div class="shape-container" draggable="true" data-shape="star">
+                <div class="shape star"></div>
+            </div>
+        </div>
+    
+        <div class="shape-matching" style="margin-top: 30px;">
+        <div class="shape-target-container">
+            <div class="shape-target" data-shape="square"></div>
+            <div class="shape-label">Persegi</div>
+        </div>
+        <div class="shape-target-container">
+            <div class="shape-target" data-shape="circle"></div>
+            <div class="shape-label">Lingkaran</div>
+        </div>
+        <div class="shape-target-container">
+            <div class="shape-target" data-shape="triangle"></div>
+            <div class="shape-label">Segitiga</div>
+        </div>
+        <div class="shape-target-container">
+            <div class="shape-target" data-shape="star"></div>
+            <div class="shape-label">Bintang</div>
+        </div>
+    </div>
+    
+    <div class="feedback" id="shape-feedback"></div>
+    
+    <div class="action-buttons">
+        <button class="action-button" onclick="resetShapeGame()">Ulangi</button>
+    </div>
+</div>
             
             <!-- Game: Mengenal Warna -->
             <div id="color-recognition" class="game-content" style="display: none;">
@@ -658,5 +682,4 @@
         document.addEventListener('DOMContentLoaded', initPuzzle);
     </script>
 </body>
-
 </html>
